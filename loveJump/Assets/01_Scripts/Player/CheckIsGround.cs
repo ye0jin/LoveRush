@@ -8,7 +8,7 @@ public class CheckIsGround : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
-            transform.GetComponentInParent<Player>();
+            transform.GetComponentInParent<Player>().JumpOver();
         }
     }
 }
