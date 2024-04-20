@@ -8,7 +8,6 @@ public class InteractionPlace : MonoBehaviour
     [SerializeField] private ItemSO[] listOfItem;// 아이템 리스트 (팔고있는)
     
     [Header("-------buy UI------")]
-    [SerializeField] private Transform interactionCanvas;
     [SerializeField] private Transform buylistParent;
     [SerializeField] private BuyUI[] buyUIs;
     [SerializeField] private BuyUI buyUIPref;
@@ -17,7 +16,7 @@ public class InteractionPlace : MonoBehaviour
 
     private void Awake()
     {
-        interactionCanvas.gameObject.SetActive(false);
+        buylistParent.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -29,7 +28,6 @@ public class InteractionPlace : MonoBehaviour
     {
         if (collision.CompareTag("Player") && isFirstReach)
         {
-            print("dd");
             isFirstReach = false;
             StartInteraction();
         }
@@ -44,20 +42,26 @@ public class InteractionPlace : MonoBehaviour
 
         buyUIs = buylistParent.GetComponentsInChildren<BuyUI>();
 
+        int cnt = 0;
         for(int i = 0; i < buyUIs.Length; ++i)
         {
-            buyUIs[i].SetUI(listOfItem[i]);
+            buyUIs[i].SetUI(listOfItem[i], this);
+            if (!buyUIs[i].ReturnBuy())
+            {
+                cnt++;
+            }
         }
 
         Time.timeScale = 0;
-        interactionCanvas.gameObject.SetActive(true);
-        interactionCanvas.DOLocalMoveY(0, 1.2f).SetUpdate(true);
+        buylistParent.gameObject.SetActive(true);
+
+        buylistParent.DOLocalMoveY(0, 1.2f).SetUpdate(true);
     }
     public void EndInteraction()
     {
-        interactionCanvas.DOLocalMoveY(1060f, 1.2f).SetUpdate(true).OnComplete(() => 
+        buylistParent.DOLocalMoveY(1060f, 1.2f).SetUpdate(true).OnComplete(() => 
         {
-            interactionCanvas.gameObject.SetActive(false);
+            buylistParent.gameObject.SetActive(false);
             for (int i = 0; i < buyUIs.Length; ++i)
             {
                 Destroy(buyUIs[i].gameObject);
