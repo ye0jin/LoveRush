@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -82,6 +83,18 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    // 음악 소리 변경
+    public void OnBgmSliderValueChanged()
+    {
+        float bgmVolume = bgmSlider.value;
+        SoundManager.Instance.SetBGMVolume(bgmVolume);
+    }
+    public void OnEffectSliderValueChanged()
+    {
+        float effectVolume = effectSlider.value;
+        SoundManager.Instance.SetEffectVolume(effectVolume);
+    }
+
     public void SetLife(int value)
     {
         for(int i = 0; i < value; ++i)
@@ -97,6 +110,11 @@ public class UIManager : MonoBehaviour
     public void DoFadeInImage()
     {
         fadeImg.DOFade(1.0f, 0.7f).SetUpdate(true);
+    }
+
+    public void DoGameRestart()
+    {
+        fadeImg.DOFade(1.0f, 0.7f).SetUpdate(true).OnComplete(() => SceneManager.LoadScene(1));
     }
     public void DoFadeImage()
     {

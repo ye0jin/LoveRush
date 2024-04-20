@@ -8,13 +8,10 @@ public class DialogUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textDialog;
 
-    private void Start()
+    public void SetDialog(string text, float x = 120f)
     {
-        transform.localPosition = new Vector3(120f, -180f, 0);
-    }
-
-    public void SetDialog(string text)
-    {
+        transform.localPosition = new Vector3(x, -180f, 0);
+        print(x);
         transform.DOLocalMoveY(-140f, 0.5f);
         textDialog.text = text;
     }

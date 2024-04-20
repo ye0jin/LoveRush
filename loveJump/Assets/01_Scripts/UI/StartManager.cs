@@ -21,6 +21,11 @@ public class StartManager : MonoBehaviour
 
     [SerializeField] private string[] textList;
 
+    private void Start()
+    {
+        fadeImg.DOFade(0f, 1.5f);
+    }
+
     public void Move()
     {
         btnContainer.transform.DOLocalMoveY(1070f, 2.0f).OnComplete(() =>

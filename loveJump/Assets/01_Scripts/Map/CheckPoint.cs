@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum checkPoint
 {
@@ -20,7 +21,7 @@ public class CheckPoint : MonoBehaviour
         else if(point == checkPoint.End)
         {
             UIManager.Instance.DoFadeInImage();
-            print("∞‘¿”≥°");
+            SceneManager.LoadScene(2);
         }
     }
 }

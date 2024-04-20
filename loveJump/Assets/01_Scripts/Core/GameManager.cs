@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         IsGameOver = true;
 
-        UIManager.Instance.DoFadeInImage();
+        UIManager.Instance.DoGameRestart();
+
     }
 }

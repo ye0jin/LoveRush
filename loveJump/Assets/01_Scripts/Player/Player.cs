@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     }
     public void SetHeal()
     {
+        SoundManager.Instance.PlayHealSound();
         GameObject ps = Instantiate(healParticle, this.transform);
         Destroy(ps, 1f);
     }
@@ -94,6 +95,7 @@ public class Player : MonoBehaviour
     }
     public void SetCherryBlossomItem()
     {
+        SoundManager.Instance.PlaySakuraSound();
         UIManager.Instance.SetInfoText("¿©Ä£ÀÌ Àâ¾ÆÁØ º¢²É È¹µæ! (5ÃÊ°£ ¹«Àû)");
         StartCoroutine(SetInvincibility());
     }
