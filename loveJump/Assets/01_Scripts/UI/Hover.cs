@@ -23,7 +23,7 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
         if(But == 1)
         {
-            transform.DOLocalMoveY(-240f, 0.5f);
+            transform.DOLocalMoveY(-260f, 0.5f);
         }
     }
 
@@ -31,7 +31,7 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if(But == 0)
         {
-            transform.DOLocalMoveY(-1022f, 0.5f);
+            transform.DOLocalMoveY(-990f, 0.5f);
         }
         if(But == 1)
         {
