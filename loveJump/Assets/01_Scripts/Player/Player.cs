@@ -88,11 +88,13 @@ public class Player : MonoBehaviour
     #region 아이템
     public void SetChocoItem()
     {
+        UIManager.Instance.SetInfoText("여친의 수제 초코 획득! (체력 회복)");
         SetLife(1);
         SetHeal();
     }
     public void SetCherryBlossomItem()
     {
+        UIManager.Instance.SetInfoText("여친이 잡아준 벚꽃 획득! (5초간 무적)");
         StartCoroutine(SetInvincibility());
     }
     private IEnumerator SetInvincibility()

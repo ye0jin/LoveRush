@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform lifeParent;
     [SerializeField] private HeartUI[] hearts;
 
+    [Header("Text")]
+    [SerializeField] private TextMeshProUGUI infotext;
 
     [Header("Setting")]
     [SerializeField] private GameObject settingPanel;
@@ -98,5 +101,16 @@ public class UIManager : MonoBehaviour
     public void DoFadeImage()
     {
         fadeImg.DOFade(1.0f, 0.7f).OnComplete(() => fadeImg.DOFade(0f, 1.2f));
+    }
+
+    public void SetInfoText(string text)
+    {
+        infotext.text = text;
+        TextType();
+    }
+    public void TextType()
+    {
+        infotext.maxVisibleCharacters = 0;
+        DOTween.To(x => infotext.maxVisibleCharacters = (int)x, 0f, infotext.text.Length, 4f).OnComplete(() => infotext.text = "");
     }
 }
