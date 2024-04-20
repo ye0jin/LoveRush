@@ -55,7 +55,7 @@ public class InteractionPlace : MonoBehaviour
         Time.timeScale = 0;
         buylistParent.gameObject.SetActive(true);
 
-        buylistParent.DOLocalMoveY(0, 1.2f).SetUpdate(true);
+        buylistParent.DOLocalMoveY(-40f, 1.2f).SetUpdate(true);
     }
     public void EndInteraction()
     {

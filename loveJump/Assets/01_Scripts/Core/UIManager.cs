@@ -43,6 +43,10 @@ public class UIManager : MonoBehaviour
 
         bgmSlider.value = PlayerPrefs.GetFloat(bgmKey);
         effectSlider.value = PlayerPrefs.GetFloat(effectKey);
+
+        fadeImg.color = new Vector4(0, 0, 0, 1);
+
+        DoFadeImage();
     }
 
     private void Update()

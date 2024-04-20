@@ -8,8 +8,11 @@ public enum obstacle
     None = 0,
     Coin = 1,
     Obstacle = 2,
-    Life = 3,
+    //Life = 3,
     Shelf = 4,
+    Choco = 5,
+    NameTag = 6,
+    Sakura = 7,
 }
 public class Obstacle : MonoBehaviour
 {
@@ -17,19 +20,20 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && Obj == obstacle.Coin)
+        if (!other.CompareTag("Player")) return;
+        if (Obj == obstacle.Coin)
         {
             Coin.Instance.SetCoin(100);
             Destroy(gameObject);
         }
-        if (other.CompareTag("Player") && (Obj ==obstacle.Obstacle || Obj == obstacle.Shelf))
+        else if (Obj ==obstacle.Obstacle || Obj == obstacle.Shelf)
         {
             if (other.TryGetComponent<Player>(out Player p))
             {
                 if (p.Life <= 0 || p.IsInvincibility) return;
 
                 Destroy(gameObject);
-
+                    
                 if(Obj == obstacle.Shelf)
                 {
                     Destroy(transform.parent.gameObject);
@@ -39,15 +43,33 @@ public class Obstacle : MonoBehaviour
                 p.SetHurt();
             }
         }
-        if (other.CompareTag("Player") && Obj ==obstacle.Life)
+        else if (Obj == obstacle.Choco)
         {
             Destroy(gameObject);
             if(other.TryGetComponent<Player>(out Player p))
             {
                 if (p.Life >= 3) return;
+                p.SetChocoItem();
+            }
+        }
+        else if(Obj == obstacle.Sakura)
+        {
+            Destroy(gameObject);
+            if (other.TryGetComponent<Player>(out Player p))
+            {
+                if (p.Life >= 3) return;
                 p.SetLife(1);
                 p.SetHeal();
             }
+        }
+        else if(Obj == obstacle.NameTag)
+        {
+            Destroy(gameObject);
+            if (other.TryGetComponent<Player>(out Player p))
+            {
+                p.SetNameTagItem();
+            }
+
         }
     }
 }

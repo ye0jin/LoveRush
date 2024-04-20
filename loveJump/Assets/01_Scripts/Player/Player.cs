@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float jumpPower;
+    [SerializeField] private float timeOfSakura;
 
     private bool IsJump = false; // 점프 중인지 확인
     private bool isInvincibility = false; // 무적인지 확인
     public bool IsInvincibility => isInvincibility; // 무적인지 확인
+
     private int currentJumpCnt = 0;
+    private int nameTagCnt = 0;
+    public int NameTagCnt => nameTagCnt;
 
     private Rigidbody2D rigid;
     private SpriteRenderer sr;
@@ -19,6 +24,7 @@ public class Player : MonoBehaviour
     public int Life => life;
     private PlayerAnimator animator;
 
+    [Header("파티클")]
     [SerializeField] private GameObject healParticle;
 
     private void Awake()
@@ -30,6 +36,7 @@ public class Player : MonoBehaviour
         life = 3;
     }
 
+    #region 라이프
     public void SetLife(int value)
     {
         life += value;
@@ -42,14 +49,12 @@ public class Player : MonoBehaviour
 
         UIManager.Instance.SetLife(life);
     }
-
     public void SetDead()
     {
         animator.SetDead();
         transform.DOLocalMoveY(-3.56f, 0.5f).SetUpdate(true);
         GameManager.Instance.GameOver();
     }
-
     public void SetHeal()
     {
         GameObject ps = Instantiate(healParticle, this.transform);
@@ -79,7 +84,32 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         isInvincibility = false;
     }
+    #endregion
 
+    #region 아이템
+    public void SetChocoItem()
+    {
+        SetLife(1);
+        SetHeal();
+    }
+    public void SetCherryBlossomItem()
+    {
+        StartCoroutine(SetInvincibility());
+    }
+    private IEnumerator SetInvincibility()
+    {
+        isInvincibility = true;
+        sr.color = new Vector4(1, 1, 1, 0.5f);
+        yield return new WaitForSeconds(timeOfSakura);
+        isInvincibility = false;
+        sr.color = Vector4.one;
+    }
+    public void SetNameTagItem()
+    {
+        //Inventory.Instance.SetInventory()
+        nameTagCnt++;
+    }
+    #endregion
 
     private void Update()
     {

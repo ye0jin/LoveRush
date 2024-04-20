@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07cd4819f7e755c4daffc098ad4f0b7c, type: 3}
   m_Name: Flower3
   m_EditorClassIdentifier: 
-  ItemImage: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  ItemInfo: "\uD14C\uC2A4\uD2B82"
-  ItemPrice: 123
+  ItemImage: {fileID: 21300000, guid: 614818bc5719d014a80a68373e5156d9, type: 3}
+  ItemInfo: "\uBB3C\uB9DD\uCD08 \uAF43\uB2E4\uBC1C"
+  ItemPrice: 10000
