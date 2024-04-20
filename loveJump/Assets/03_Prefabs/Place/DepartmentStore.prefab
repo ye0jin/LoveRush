@@ -50,7 +50,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23414ee6626dded4daa55e08e57da176, type: 2}
   - {fileID: 11400000, guid: 03523dc1224997b42907134b35d202ab, type: 2}
   - {fileID: 11400000, guid: fc2446bb054580548b49ff163f2f91f6, type: 2}
-  interactionCanvas: {fileID: 0}
   buylistParent: {fileID: 0}
   buyUIs: []
   buyUIPref: {fileID: 5420146737955593514, guid: 1f199169574b1c440a817ec1e4105e07, type: 3}

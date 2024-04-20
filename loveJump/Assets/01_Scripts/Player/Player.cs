@@ -10,9 +10,20 @@ public class Player : MonoBehaviour
     private int currentJumpCnt = 0;
     private Rigidbody2D rigid;
 
+    private int life;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        life = 3;
+    }
+
+    public void SetLife(int value)
+    {
+        life += value;
+        life = Mathf.Clamp(life, 0, 3);
+
+        UIManager.Instance.SetLife(life);
     }
 
     private void Update()
