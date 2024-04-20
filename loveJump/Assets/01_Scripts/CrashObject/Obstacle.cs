@@ -16,10 +16,13 @@ public class Obstacle : MonoBehaviour
         }
         if (other.CompareTag("Player") && Obj ==1)
         {
-            Destroy(gameObject);
             if (other.TryGetComponent<Player>(out Player p))
             {
+                if (p.Life <= 0 || p.IsInvincibility) return;
+
+                Destroy(gameObject);
                 p.SetLife(-1);
+                p.SetHurt();
             }
         }
         if (other.CompareTag("Player") && Obj ==2)
@@ -27,7 +30,9 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
             if(other.TryGetComponent<Player>(out Player p))
             {
+                if (p.Life >= 3) return;
                 p.SetLife(1);
+                p.SetHeal();
             }
         }
     }

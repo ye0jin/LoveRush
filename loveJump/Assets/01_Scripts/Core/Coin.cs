@@ -29,6 +29,7 @@ public class Coin : MonoBehaviour
 
     internal void SetCoin(int value)
     {
+        SoundManager.Instance.PlayCoinSound();
         coin += value;
         UpdateCoinText();
     }
