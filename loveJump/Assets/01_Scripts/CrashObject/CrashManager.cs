@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CrashManager : MonoBehaviour
 {
+    public int Life;
     [SerializeField]private List<GameObject> Heart = new List<GameObject>();
 
     [SerializeField] private List<GameObject> Obstacle = new List<GameObject>();
