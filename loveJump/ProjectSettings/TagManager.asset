@@ -4,8 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - Ground
   - Interaction
+=======
+  - coin
+  - heart
+  - obstacle
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
