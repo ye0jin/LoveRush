@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     public bool IsInvincibility => isInvincibility; // 무적인지 확인
 
     private int currentJumpCnt = 0;
-    private int nameTagCnt = 0;
-    public int NameTagCnt => nameTagCnt;
 
     private Rigidbody2D rigid;
     private SpriteRenderer sr;
@@ -26,6 +24,7 @@ public class Player : MonoBehaviour
 
     [Header("파티클")]
     [SerializeField] private GameObject healParticle;
+    [SerializeField] private GameObject sakuraParticle;
 
     private void Awake()
     {
@@ -98,16 +97,15 @@ public class Player : MonoBehaviour
     }
     private IEnumerator SetInvincibility()
     {
+        GameObject obj = Instantiate(sakuraParticle);
+
         isInvincibility = true;
-        sr.color = new Vector4(1, 1, 1, 0.5f);
+        sr.color = new Vector4(1, 1, 1, 0.8f);
         yield return new WaitForSeconds(timeOfSakura);
         isInvincibility = false;
         sr.color = Vector4.one;
-    }
-    public void SetNameTagItem()
-    {
-        //Inventory.Instance.SetInventory()
-        nameTagCnt++;
+
+        Destroy(obj);
     }
     #endregion
 

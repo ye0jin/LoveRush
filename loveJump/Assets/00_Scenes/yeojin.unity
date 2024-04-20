@@ -930,7 +930,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2124535059}
   - {fileID: 1423286230}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -989,9 +988,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 696639190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16b6c6d58b5c52b4ab2e9f3b240589d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9efcd5000190241d08b5fc041908e74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSound: {fileID: 8300000, guid: cd7ec596536b50e46b3a8dc2f4a38e5f, type: 3}
+  jumpSound: {fileID: 8300000, guid: f5b4a769e299b844aa79487aa4703b16, type: 3}
 --- !u!82 &696639193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1695,7 +1696,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 8
+  timeOfSakura: 5
   healParticle: {fileID: 68778247630906926, guid: 0879d9f588c3634418b40206a364ef72, type: 3}
+  sakuraParticle: {fileID: 1849391529727993750, guid: 265b73b523011404f834c4c4540ff6e4, type: 3}
 --- !u!50 &1024545954
 Rigidbody2D:
   serializedVersion: 4
@@ -3676,72 +3679,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027088426}
   m_CullTransparentMesh: 1
---- !u!1001 &2124535058
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 649770994}
-    m_Modifications:
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -123.90329
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5687027
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935236540131355472, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: buylistParent
-      value: 
-      objectReference: {fileID: 1907513473}
-    - target: {fileID: 1967859028764798564, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-      propertyPath: m_Name
-      value: FlowerShop
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
---- !u!4 &2124535059 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1857319286597234915, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
-  m_PrefabInstance: {fileID: 2124535058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

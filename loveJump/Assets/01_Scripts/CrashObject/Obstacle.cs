@@ -11,7 +11,6 @@ public enum obstacle
     //Life = 3,
     Shelf = 4,
     Choco = 5,
-    NameTag = 6,
     Sakura = 7,
 }
 public class Obstacle : MonoBehaviour
@@ -57,19 +56,8 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
             if (other.TryGetComponent<Player>(out Player p))
             {
-                if (p.Life >= 3) return;
-                p.SetLife(1);
-                p.SetHeal();
+                p.SetCherryBlossomItem();
             }
-        }
-        else if(Obj == obstacle.NameTag)
-        {
-            Destroy(gameObject);
-            if (other.TryGetComponent<Player>(out Player p))
-            {
-                p.SetNameTagItem();
-            }
-
         }
     }
 }
