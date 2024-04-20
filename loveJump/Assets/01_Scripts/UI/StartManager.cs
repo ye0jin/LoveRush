@@ -55,6 +55,11 @@ public class StartManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(d.gameObject);
 
+        d = Instantiate(dialoggirl, dialogParent);
+        d.SetDialog(textList[i++]);
+        yield return new WaitForSeconds(2f);
+        Destroy(d.gameObject);
+
         d = Instantiate(dialogboy, dialogParent);
         d.SetDialog(textList[i++]);
         yield return new WaitForSeconds(2f);

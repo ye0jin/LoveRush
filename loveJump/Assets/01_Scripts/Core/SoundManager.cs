@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip healSound;
     [SerializeField] private AudioClip sakuraSound;
+    [SerializeField] private AudioClip purchaseSound;
     
 
     private void Awake()
@@ -64,6 +65,10 @@ public class SoundManager : MonoBehaviour
     public void PlayHealSound()
     {
         source.PlayOneShot(healSound);
+    }
+    public void PlayPurchaseSound()
+    {
+        source.PlayOneShot(purchaseSound);
     }
     public void PlaySakuraSound()
     {

@@ -2034,7 +2034,7 @@ RectTransform:
   m_Father: {fileID: 1663767674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: -36}
   m_Pivot: {x: 0, y: 0.5}
@@ -5091,7 +5091,7 @@ Transform:
   m_GameObject: {fileID: 649770993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130, y: 0, z: 0}
+  m_LocalPosition: {x: 135, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5361,6 +5361,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlowerShop
       objectReference: {fileID: 0}
+    - target: {fileID: 5759642745617494742, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
+      propertyPath: m_Size.y
+      value: 12.95383
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759642745617494742, guid: 9c2847c54e0593e48a8b40996ade18b3, type: 3}
+      propertyPath: m_Offset.y
+      value: 4.726914
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5482,6 +5490,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: f5b4a769e299b844aa79487aa4703b16, type: 3}
   healSound: {fileID: 8300000, guid: c36668cd3e49ae24884ab4560c1a5adf, type: 3}
   sakuraSound: {fileID: 8300000, guid: 49804ffe5ca6ef7488aeb31b5727b398, type: 3}
+  purchaseSound: {fileID: 8300000, guid: 1a11db4c4228fbf45a661b505344d317, type: 3}
 --- !u!82 &696639193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5866,7 +5875,7 @@ RectTransform:
   m_Father: {fileID: 605438769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5956,7 +5965,7 @@ RectTransform:
   m_Father: {fileID: 213033997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: -36}
   m_Pivot: {x: 0, y: 0.5}
@@ -11284,7 +11293,7 @@ RectTransform:
   m_Father: {fileID: 1864024170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14558,7 +14567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2027088427
 RectTransform:
   m_ObjectHideFlags: 0

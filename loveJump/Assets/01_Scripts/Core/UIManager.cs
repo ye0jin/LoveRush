@@ -112,9 +112,9 @@ public class UIManager : MonoBehaviour
         fadeImg.DOFade(1.0f, 0.7f).SetUpdate(true);
     }
 
-    public void DoGameRestart()
+    public void DoSceneChange(int i)
     {
-        fadeImg.DOFade(1.0f, 0.7f).SetUpdate(true).OnComplete(() => SceneManager.LoadScene(1));
+        fadeImg.DOFade(1.0f, 0.7f).SetUpdate(true).OnComplete(() => SceneManager.LoadScene(i));
     }
     public void DoFadeImage()
     {

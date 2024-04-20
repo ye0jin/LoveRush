@@ -20,8 +20,7 @@ public class CheckPoint : MonoBehaviour
         }
         else if(point == checkPoint.End)
         {
-            UIManager.Instance.DoFadeInImage();
-            SceneManager.LoadScene(2);
+            UIManager.Instance.DoSceneChange(2);
         }
     }
 }

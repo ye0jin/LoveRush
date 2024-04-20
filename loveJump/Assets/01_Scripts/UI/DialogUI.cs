@@ -11,7 +11,7 @@ public class DialogUI : MonoBehaviour
     public void SetDialog(string text, float x = 120f)
     {
         transform.localPosition = new Vector3(x, -180f, 0);
-        print(x);
+        //print(x);
         transform.DOLocalMoveY(-140f, 0.5f);
         textDialog.text = text;
     }

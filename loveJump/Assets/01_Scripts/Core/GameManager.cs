@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
         IsGameOver = true;
 
-        UIManager.Instance.DoGameRestart();
+        UIManager.Instance.DoSceneChange(1);
 
     }
 }

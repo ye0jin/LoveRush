@@ -49,5 +49,7 @@ public class BuyUI : MonoBehaviour
         Inventory.Instance.SetInventory(item);
         Coin.Instance.SetCoin(-item.ItemPrice);
         connectPlace.EndInteraction();
+
+        SoundManager.Instance.PlayPurchaseSound();
     }
 }
