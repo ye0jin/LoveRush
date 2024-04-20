@@ -5,26 +5,33 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private GameObject Manager;
+    [SerializeField] private int Obj;
+    private GameObject Manager;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Manager = GameObject.Find("CrashManager");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) ;
+        if (other.CompareTag("Player") && Obj ==0)
+        {
+            Manager.GetComponent<CrashManager>().coin += 100;
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Player") && Obj ==1)
         {
             Manager.GetComponent<CrashManager>().Life--;
             Destroy(gameObject);
-            
+        }
+        if (other.CompareTag("Player") && Obj ==2)
+        {
+            Destroy(gameObject);
+            if (Manager.GetComponent<CrashManager>().Life < 3)
+            {
+                Manager.GetComponent<CrashManager>().Life++;
+            }
         }
     }
 }
