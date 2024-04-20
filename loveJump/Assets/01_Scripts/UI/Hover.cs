@@ -19,11 +19,11 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if(But == 0)
         {
-            transform.DOLocalMoveY(40f, 0.5f);
+            transform.DOLocalMoveY(-946f, 0.5f);
         }
         if(But == 1)
         {
-            transform.DOLocalMoveY(-180f, 0.5f);
+            transform.DOLocalMoveY(-240f, 0.5f);
         }
     }
 
@@ -31,11 +31,11 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if(But == 0)
         {
-            transform.DOLocalMoveY(0f, 0.5f);
+            transform.DOLocalMoveY(-1022f, 0.5f);
         }
         if(But == 1)
         {
-            transform.DOLocalMoveY(-215f, 0.5f);
+            transform.DOLocalMoveY(-300f, 0.5f);
         }
     }
 }

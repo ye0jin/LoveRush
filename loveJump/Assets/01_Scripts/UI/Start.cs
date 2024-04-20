@@ -8,7 +8,7 @@ public class Start : MonoBehaviour
     public GameObject Obj;
     public void Move()
     {
-        Obj.transform.DOLocalMoveY(5000f, 3f);
+        Obj.transform.DOLocalMoveY(1870f, 3f);
     }
 
     public void SceneMove()
