@@ -19,4 +19,8 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator.SetBool("DoubleJump", value);
     }
+    public void SetDead()
+    {
+        animator.SetTrigger("Over");
+    }
 }

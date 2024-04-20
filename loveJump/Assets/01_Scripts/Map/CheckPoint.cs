@@ -19,6 +19,7 @@ public class CheckPoint : MonoBehaviour
         }
         else if(point == checkPoint.End)
         {
+            UIManager.Instance.DoFadeInImage();
             print("∞‘¿”≥°");
         }
     }

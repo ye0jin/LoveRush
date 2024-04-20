@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -44,7 +45,9 @@ public class Player : MonoBehaviour
 
     public void SetDead()
     {
-
+        animator.SetDead();
+        transform.DOLocalMoveY(-3.56f, 0.5f).SetUpdate(true);
+        GameManager.Instance.GameOver();
     }
 
     public void SetHeal()
@@ -80,7 +83,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentJumpCnt < 2)
+        if (Input.GetKeyDown(KeyCode.Space) && currentJumpCnt < 2 && !GameManager.Instance.IsGameOver)
         {
             SoundManager.Instance.PlayJumpSound();
 

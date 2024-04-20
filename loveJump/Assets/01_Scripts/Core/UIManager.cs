@@ -87,8 +87,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void DoFadeInImage()
+    {
+        fadeImg.DOFade(1.0f, 0.7f).SetUpdate(true);
+    }
     public void DoFadeImage()
     {
-        fadeImg.DOFade(1.0f, 0.7f).OnComplete(() => fadeImg.DOFade(0f, 0.5f));
+        fadeImg.DOFade(1.0f, 0.7f).OnComplete(() => fadeImg.DOFade(0f, 1.2f));
     }
 }
