@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigid;
 
     private int life;
+    private PlayerAnimator animator;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        animator = GetComponent<PlayerAnimator>();
+
         life = 3;
     }
 
@@ -36,11 +39,22 @@ public class Player : MonoBehaviour
             rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
             //print("มกวม");
             currentJumpCnt++;
+
+            if(currentJumpCnt == 1)
+            {
+                animator.SetJump(true);
+            }
+            else if(currentJumpCnt == 2)
+            {
+                animator.SetDoubleJump(true);
+            }
         }
     }
 
     public void JumpOver()
     {
+        animator.SetJump(false);
+        animator.SetDoubleJump(false);
         IsJump = false;
         currentJumpCnt = 0;
     }

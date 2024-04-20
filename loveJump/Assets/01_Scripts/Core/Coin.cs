@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
     public static Coin Instance;
     public int coin;
 
-    [SerializeField] private TextMeshProUGUI coinText;
+    [SerializeField] private Text coinText;
 
     private void Awake()
     {

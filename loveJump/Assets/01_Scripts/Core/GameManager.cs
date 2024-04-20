@@ -5,5 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int Life;
+    public Camera mainCam;
+
+    private void Awake()
+    {
+        mainCam = Camera.main;
+    }
 }
